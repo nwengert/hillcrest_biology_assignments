@@ -1,6 +1,7 @@
 import { Switch, Route, NavLink, Link } from 'react-router-dom'
 import React from 'react'
 import yellowBird from './images/yellowBird.jpg'
+import Assignment from './Assignment'
 
 function Biology() {
     const pathname = window.location.pathname
@@ -9,6 +10,14 @@ function Biology() {
             name: "Bird-Notes",
             monthAssigned: 0,
             dayAssigned: 19,
+            dueDate: "January 22",
+            picture: yellowBird
+        },
+        {
+            name: "Origin of Birds",
+            monthAssigned: 0,
+            dayAssigned: 19,
+            dueDate: "January 25",
             picture: yellowBird
         }
     ]
@@ -20,7 +29,8 @@ function Biology() {
                     <Link to="/"        className='link'>Back</Link>
                     <Link to="/zoology" className='link'>I meant to click Zoology</Link>
                     <p>This is Biology</p>
-                    <img src={bAssignments.picture} alt="yellow bird"/>
+                    {bAssignments.map(asignment => <Assignment />)}
+
                 </div>
             }
         </div>
