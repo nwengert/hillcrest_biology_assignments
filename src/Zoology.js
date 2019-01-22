@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, NavLink, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 function Zoology() {

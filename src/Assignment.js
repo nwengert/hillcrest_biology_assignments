@@ -3,9 +3,8 @@ import React from 'react'
 function Assignment(props) {
     return(
         <div>
-            <p>Assignment Component</p>
-            <p>{this.props.name}</p>
-            <p>{this.props.dueDate}</p>
+            <h1>{props.name}</h1>
+            <h2>{props.dueDate}</h2>
         </div>
     )
 }
