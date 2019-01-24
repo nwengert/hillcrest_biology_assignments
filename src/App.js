@@ -12,7 +12,6 @@ export default class App extends React.Component{
         const pathname = window.location.pathname
         return (
             <div>
-                <span>Today's date: {mm + dd}</span>
                 <Switch>
                     <Route 
                         path="/biology" 

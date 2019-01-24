@@ -1,3 +1,38 @@
 .link {
     margin: 5px;
 }
+.container {
+    height: 100%;
+    background-color: lightgray;
+    display: grid;
+    grid-gap: 4px;
+    grid-template: 100px auto / repeat(12, 1fr);
+}
+.header {
+    background:darkgray;
+    color: lightgray;
+    grid-column: 2 / -1;
+}
+.menu{
+    grid-row: 1 / -1;
+    display: flex;
+    flex-direction: column;
+}
+.assignments {
+    grid-column: 2 / -1;
+    background-color: darkgray;
+    display: grid;
+    grid-gap: 4px;
+    grid-template: 250px 250px / repeat(3, 1fr) ;
+}
+.assignment{
+    border: solid 2px darkgray;
+    background-color: lightgray;
+    color: slategray;
+    display: flex;
+    flex-direction: row;
+}
+img {
+    height: 120px;
+    width: auto;
+}
