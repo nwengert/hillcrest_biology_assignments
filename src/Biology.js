@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
 import yellowBird from './images/yellowBird.jpg'
+import biologyPNG from './images/biology.png'
 
 function Biology(props) {
     const pathname = window.location.pathname
@@ -52,7 +53,8 @@ function Biology(props) {
             {pathname === '/biology'&& 
                 <div className='container'>
                     <div className='header'>
-                        <h1 className='headerTitle'>3rd quarter Biology Assignments</h1>
+                        <img id='biologyPNG' src={biologyPNG} alt="Biology"/>
+                        <h1 className='headerTitle'>3rd quarter Assignments</h1>
                         <span>Today's date: {props.mm + props.dd}</span> 
                     </div>
                     <div className='menu'>

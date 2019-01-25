@@ -36,3 +36,14 @@ img {
     height: 120px;
     width: auto;
 }
+#biologyPNG {
+    width: 555px;
+    -webkit-animation-name: floating;
+    animation-name: floating;
+    -webkit-animation-duration: 40s;
+    animation-duration: 40s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+}
