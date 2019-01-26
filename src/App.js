@@ -19,7 +19,7 @@ export default class App extends React.Component{
                     />
                     <Route
                         path='/zoology'
-                        render={(props) => <Zoology {...props} mm={mm} dd={dd}/>}
+                        render={(props) => <Zoology {...props} mm={mm} dd={dd} month={month}/>}
                     />
                 </Switch>
 

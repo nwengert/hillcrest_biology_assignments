@@ -2,17 +2,18 @@ import { Link } from 'react-router-dom'
 import React from 'react'
 import yellowBird from './images/yellowBird.jpg'
 import biologyPNG from './images/biology.png'
+import meiosis from './images/meiosis.jpeg'
 
 function Biology(props) {
     const pathname = window.location.pathname
     const bAssignments = [
         {
-            name: "Bird-Notes",
+            name: "Meiosis Packet",
             assignedMonth: 0,
             assignedDay: 6,
             dueMonth: 0,
             dueDay: 10,
-            picture: yellowBird
+            picture: meiosis
         },
         {
             name: "Origin of Birds",
@@ -59,7 +60,7 @@ function Biology(props) {
                     </div>
                     <div className='menu'>
                         <Link to="/"        className='link'>Back</Link>
-                        <Link to="/zoology" className='link'>I meant to click Zoology</Link>
+                        <Link to="/zoology" className='link'>Zoology</Link>
                     </div>
 
                     <div className='assignments'>
@@ -71,7 +72,7 @@ function Biology(props) {
                                                                 <h5>Days since due:    {props.dd - assignment.dueDay}</h5>
                                                                 <h4>Percent Penalized: {10 + (props.dd - assignment.dueDay)*2}%</h4>
                                                             </div>
-                                                            <img src={yellowBird} alt="yellow bird"/>
+                                                            <img src={assignment.picture} alt="yellow bird"/>
                                                         </div>
                                         )
                         }

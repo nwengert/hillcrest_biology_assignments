@@ -1,6 +1,26 @@
 .link {
-    margin: 5px;
+    margin: 55px 0px 55px 9px;
+    font-size: 22px;
+    text-decoration: none;
+    font-style: bold;
 }
+.link:hover {
+    animation: spaceLetters 0.5s;
+}
+@keyframes spaceLetters{
+    0%{
+      letter-spacing: 0px;
+    }
+    20%{
+      color: red;
+    }
+    75%{
+      letter-spacing: 4px;
+    }
+    100%{
+      letter-spacing: 0px;
+    }
+  }
 .container {
     height: 100%;
     background-color: lightgray;
@@ -12,6 +32,8 @@
     background:darkgray;
     color: lightgray;
     grid-column: 2 / -1;
+    display: flex;
+    flex-direction: row;
 }
 .menu{
     grid-row: 1 / -1;
@@ -46,4 +68,7 @@ img {
     animation-iteration-count: infinite;
     -webkit-animation-timing-function: ease-in-out;
     animation-timing-function: ease-in-out;
+}
+h5 {
+    margin: 0px;
 }
