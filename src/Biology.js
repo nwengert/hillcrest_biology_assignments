@@ -9,8 +9,7 @@ function Biology(props) {
     const bAssignments = [
         {
             name: "Meiosis Packet",
-            assignedMonth: 0,
-            assignedDay: 6,
+            assigned: (2018,22,24),
             dueMonth: 0,
             dueDay: 10,
             picture: meiosis
