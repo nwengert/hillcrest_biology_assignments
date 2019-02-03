@@ -9,9 +9,12 @@ function Biology(props) {
     const bAssignments = [
         {
             name: "Meiosis Packet",
-            assigned: (2018,22,24),
-            dueMonth: 0,
-            dueDay: 10,
+            assMonth: 0,
+            assDay: 18,
+            ass_ms: 1547708400000,
+            dueMonth: 1,
+            dueDay: 4,
+            due_ms: 1549350000000,
             picture: meiosis
         },
         {
@@ -48,6 +51,9 @@ function Biology(props) {
         }
     ]
     console.log(props)
+    //Get 1 day in milliseconds
+    var one_day=1000*60*60*24;
+    //                                              DO LOGICS FOR days since due UP HERE !!
     return(
         <div>
             {pathname === '/biology'&& 
@@ -64,14 +70,16 @@ function Biology(props) {
 
                     <div className='assignments'>
                         {bAssignments.map(assignment => <div className='assignment' key={assignment.name}>
-                                                            <div>
-                                                                <h3>{assignment.name}</h3>
-                                                                <h5>Date Assigned:     {props.month[assignment.assignedMonth]} {assignment.assignedDay}</h5>
-                                                                <h5>Due Date:          {props.month[assignment.dueMonth]} {assignment.dueDay}</h5>
-                                                                <h5>Days since due:    {props.dd - assignment.dueDay}</h5>
-                                                                <h4>Percent Penalized: {10 + (props.dd - assignment.dueDay)*2}%</h4>
+                                                            <h2>{assignment.name}</h2>
+                                                            <div id='assignmentBody'>
+                                                                <div id='assignmentInnerBody'>
+                                                                    <h5>Date Assigned:     {props.month[assignment.assMonth]} {assignment.assDay}</h5>
+                                                                    <h5>Due Date:          {props.month[assignment.dueMonth]} {assignment.dueDay}</h5>
+                                                                    <h5>Days since due:    {Math.floor((props.todayMS - assignment.due_ms)/one_day)}</h5>
+                                                                </div>
+                                                                <img src={assignment.picture} className='assignmentImg' alt="yellow bird"/>
                                                             </div>
-                                                            <img src={assignment.picture} alt="yellow bird"/>
+                                                            <h3>Percent Penalized: {Math.floor(10 + ((props.todayMS - assignment.due_ms)/one_day)*2)}%</h3>
                                                         </div>
                                         )
                         }

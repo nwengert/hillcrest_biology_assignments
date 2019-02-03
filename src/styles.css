@@ -52,7 +52,21 @@
     background-color: lightgray;
     color: slategray;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#assignmentBody{
+    display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+#assignmentInnerBody{
+    display: flex;
+    flex-direction: column;
+}
+.assignmentImg{
+    margin-left: 9px;
 }
 img {
     height: 120px;

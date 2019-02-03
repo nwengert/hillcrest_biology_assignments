@@ -9,17 +9,18 @@ export default class App extends React.Component{
         var today = new Date();
         var dd = today.getDate();
         var mm = month[today.getMonth()]; //January is 0!
+        const today_ms = today.getTime();
         const pathname = window.location.pathname
         return (
             <div>
                 <Switch>
                     <Route 
                         path="/biology" 
-                        render={(props) => <Biology {...props} mm={mm} dd={dd} month={month}/>}
+                        render={(props) => <Biology {...props} mm={mm} dd={dd} month={month} todayMS={today_ms}/>}
                     />
                     <Route
                         path='/zoology'
-                        render={(props) => <Zoology {...props} mm={mm} dd={dd} month={month}/>}
+                        render={(props) => <Zoology {...props} mm={mm} dd={dd} month={month} todayMS={today_ms}/>}
                     />
                 </Switch>
 
