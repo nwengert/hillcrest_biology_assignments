@@ -25,7 +25,7 @@ export default class App extends React.Component{
                 </Switch>
 
                 {pathname === '/'&& 
-                    <div>
+                    <div className='opener'>
                         <Link to="/biology" className='link'>Biology</Link>
                         <Link to="/zoology" className='link'>Zoology</Link>
                     </div>

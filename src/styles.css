@@ -1,8 +1,25 @@
+.container {
+    height: 100%;
+    background-color: lightgray;
+    display: grid;
+    grid-gap: 4px;
+    grid-template: 100px auto / repeat(12, 1fr);
+}
+.opener{
+    background: rebeccapurple;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .link {
     margin: 55px 0px 55px 9px;
     font-size: 22px;
     text-decoration: none;
     font-style: bold;
+    color: white;
 }
 .link:hover {
     animation: spaceLetters 0.5s;
@@ -15,30 +32,27 @@
       color: red;
     }
     75%{
-      letter-spacing: 4px;
+      letter-spacing: 3px;
     }
     100%{
       letter-spacing: 0px;
     }
   }
-.container {
-    height: 100%;
-    background-color: lightgray;
-    display: grid;
-    grid-gap: 4px;
-    grid-template: 100px auto / repeat(12, 1fr);
-}
+
 .header {
     background:darkgray;
     color: lightgray;
     grid-column: 2 / -1;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 .menu{
     grid-row: 1 / -1;
     display: flex;
     flex-direction: column;
+    /* width: 40px; */
 }
 .assignments {
     grid-column: 2 / -1;
@@ -85,4 +99,32 @@ img {
 }
 h5 {
     margin: 0px;
+}
+/* phone screens */
+@media screen and (max-width: 875px){
+    .container {
+        grid-template: 100px 40px auto / repeat(12, 1fr);
+        grid-template-areas: 
+        "m m m m m m m m m m m m"
+        "h h h h h h h h h h h h"
+        "h h h h h h h h h h h h"
+        "a a a a a a a a a a a a"
+    }
+    .header{
+        grid-area: h;
+    }
+    .menu{
+        grid-area: m;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+    .assignments {
+        grid-area: a;
+    }
+    .link{
+        margin: 0px;
+    }
 }
