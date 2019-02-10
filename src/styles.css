@@ -31,14 +31,16 @@
     20%{
       color: red;
     }
-    75%{
+    /* 75%{
       letter-spacing: 3px;
-    }
+    } */
     100%{
-      letter-spacing: 0px;
+      letter-spacing: 4px;
     }
   }
-
+  .link:not(:hover){
+    transition-duration: 0.5s;
+}
 .header {
     background:darkgray;
     color: lightgray;
@@ -55,20 +57,119 @@
     /* width: 40px; */
 }
 .assignments {
+    padding: 5px 100px 5px 100px;
+
     grid-column: 2 / -1;
     background-color: darkgray;
     display: grid;
-    grid-gap: 4px;
-    grid-template: 250px 250px / repeat(3, 1fr) ;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-rows: repeat(2, 250px);
+    justify-content: center;
 }
 .assignment{
-    border: solid 2px darkgray;
-    background-color: lightgray;
-    color: slategray;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    width: 100%;
+    height: 100%;
+    box-shadow: 2px 2px 20px black;
+    border-radius: 3px;
 }
+
+
+
+
+.assignments{
+    padding: 5px 100px 5px 100px;
+    display: grid;
+    grid-gap: 22px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-rows: repeat(2, 250px);
+    justify-content: center;
+}
+.assignmentImg{
+    width: 100%;
+    height: 100%;
+    box-shadow: 2px 2px 20px black;
+    border-radius: 3px;
+}
+.hvrbox,
+.hvrbox * {
+	box-sizing: border-box;
+}
+.hvrbox {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	max-width: 100%;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 2px 2px 20px black;
+}
+.hvrbox:hover{
+    transform: scale(1.02);
+    transition-duration: 0.3s;
+    box-shadow: 2px 2px 35px black;
+}
+.hvrbox:not(:hover){
+    transition-duration: 0.5s;
+}
+.hvrbox img {
+	max-width: 100%;
+}
+.hvrbox .hvrbox-layer_bottom {
+	display: block;
+}
+.hvrbox .hvrbox-layer_top {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	color: #fff;
+	padding: 15px;
+	-moz-transition: all 0.2s ease-in-out 0s;
+	-webkit-transition: all 0.2s ease-in-out 0s;
+	-ms-transition: all 0.2s ease-in-out 0s;
+	transition: all 0.2s ease-in-out 0s;
+}
+.hvrbox:hover .hvrbox-layer_top,
+.hvrbox.active .hvrbox-layer_top {
+	opacity: 1;
+}
+.hvrbox .hvrbox-text {
+    width: 88%;
+    background: transparent;
+    color: white;
+	text-align: center;
+	font-size: 22px;
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-moz-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.hvrbox .hvrbox-text_mobile {
+	font-size: 20px;
+	margin-top: 5px;
+	padding-top: 2px;
+	display: none;
+}
+.hvrbox.active .hvrbox-text_mobile {
+	display: block;
+}
+
+
+
+
 #assignmentBody{
     display: flex;
     flex-direction: row;

@@ -69,18 +69,22 @@ function Biology(props) {
                     </div>
 
                     <div className='assignments'>
-                        {bAssignments.map(assignment => <div className='assignment' key={assignment.name}>
-                                                            <h2>{assignment.name}</h2>
-                                                            <div id='assignmentBody'>
-                                                                <div id='assignmentInnerBody'>
-                                                                    <h5>Date Assigned:     {props.month[assignment.assMonth]} {assignment.assDay}</h5>
-                                                                    <h5>Due Date:          {props.month[assignment.dueMonth]} {assignment.dueDay}</h5>
-                                                                    <h5>Days since due:    {Math.floor((props.todayMS - assignment.due_ms)/one_day)}</h5>
+                        {bAssignments.map(assignment => <div className='hvrbox' key={assignment.name}>
+                                                            {/* <a href="https://github.com/nwengert/VBA/blob/master/DIT_update" target="_blank" rel="noopener noreferrer"> */}
+                                                            <img src={assignment.picture} className='assignmentImg' alt="yellow bird"/>
+                                                                <div class="hvrbox-layer_top">
+                                                                    <div class="hvrbox-text">
+                                                                        <div className='assignment'>
+                                                                            <h2>{assignment.name}</h2>
+                                                                            <h5>Date Assigned:     {props.month[assignment.assMonth]} {assignment.assDay}</h5>
+                                                                            <h5>Due Date:          {props.month[assignment.dueMonth]} {assignment.dueDay}</h5>
+                                                                            <h5>Days since due:    {Math.floor((props.todayMS - assignment.due_ms)/one_day)}</h5>
+                                                                            <h3>Percent Penalized: {Math.floor(10 + ((props.todayMS - assignment.due_ms)/one_day)*2)}%</h3>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                                <img src={assignment.picture} className='assignmentImg' alt="yellow bird"/>
-                                                            </div>
-                                                            <h3>Percent Penalized: {Math.floor(10 + ((props.todayMS - assignment.due_ms)/one_day)*2)}%</h3>
-                                                        </div>
+                                                            {/* </a> */}
+                    </div>  
                                         )
                         }
                     </div>
